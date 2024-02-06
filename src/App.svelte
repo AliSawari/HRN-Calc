@@ -28,7 +28,8 @@
     
     function calculate(){
       let diff = Number(finalBalance.value) - Number(initBalance.value);
-      profit.value = diff;
+      let diffInPercent = (Number(diff / initBalance.value) * 100).toFixed(1);
+      profit.value = `${diff} (${diffInPercent}%)`;
       profitEach.value = (diff / 2).toFixed(1);
       initFee.value = (Number(initBalance.value) * FEE).toFixed(1);
       debt.value = (initFee.value - profitEach.value ).toFixed(1);
@@ -107,19 +108,19 @@
       <div class="item">
         <label for="profit-each">Profit</label>
         
-        <input value="0" type="number" id="profit" readonly> $
+        <input value="0"  id="profit" readonly style="max-width: 200px;"> $
       </div>
   
       <div class="item">
         <label for="profit-each">Profit for each</label>
         
-        <input value="0" type="number" id="profit-each" readonly> $
+        <input value="0"  id="profit-each" readonly> $
       </div>
   
       <div class="item">
         <label for="debt">Debt</label>
         
-        <input value="0" type="number" id="debt" readonly> $
+        <input value="0"  id="debt" readonly> $
         <p>hint: negative number means Client should pay the debt</p>
       </div>
   
@@ -127,25 +128,25 @@
       <div class="item">
         <label for="next-init">Next month's Starting Balance</label>
         
-        <input value="0" type="number" id="next-init" readonly> $
+        <input value="0"  id="next-init" readonly> $
       </div>
   
       <div class="item">
         <label for="next-fee">Next month's 7% fee </label>
         
-        <input value="0" type="number" id="next-fee" readonly> $
+        <input value="0"  id="next-fee" readonly> $
       </div>
   
       <div class="item">
         <label for="next-real-fee">Next month's Net fee (realized with debt)</label>
         
-        <input value="0" type="number" id="next-real-fee" readonly> $
+        <input value="0"  id="next-real-fee" readonly> $
       </div>
     
       <div class="item">
         <label for="withdrawal">Withdrawal</label>
         
-        <input value="0" type="number" id="withdrawal" readonly> $
+        <input value="0"  id="withdrawal" readonly> $
       </div>
   
     </div>
