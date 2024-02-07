@@ -28,7 +28,7 @@
     
     function calculate(){
       let diff = Number(finalBalance.value) - Number(initBalance.value);
-      let diffInPercent = (Number(diff / initBalance.value) * 100).toFixed(1);
+      let diffInPercent = diff !== 0 ? (Number(diff / initBalance.value) * 100).toFixed(1) : "0";
       profit.value = `${diff} (${diffInPercent}%)`;
       profitEach.value = (diff / 2).toFixed(1);
       initFee.value = (Number(initBalance.value) * FEE).toFixed(1);
